@@ -1,0 +1,63 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node / Vite
+node_modules/
+dist/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# dotenv
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+
+# .NET
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+.vs/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Coverage
+coverage/
+TestResults/
+*.trx
+
+# Publish/artifacts
+artifacts/
+*.nupkg
+
+# Images/Uploads (adjust if needed)
+wwwroot/uploads/
+
+# Secrets and local settings
+McpWebApi/appsettings.Development.json
+McpWebApi/appsettings.Local.json
+**/secrets.json
+
+# OS / editor
+Thumbs.db
+*.swp
+*.swo
+*.orig
+
+# Vite cache
+client/.vite/
