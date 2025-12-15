@@ -462,6 +462,12 @@ const AdminPanel = () => {
             >
               🛒 Siparişler
             </li>
+            <li 
+              className={activeTab === 'offers' ? 'active' : ''}
+              onClick={() => setActiveTab('offers')}
+            >
+              📝 Teklifler
+            </li>
           </ul>
           
           <button 
@@ -568,7 +574,7 @@ const AdminPanel = () => {
                         <label>Ek Görseller (Her satıra bir URL)</label>
                         <textarea 
                           name="images" 
-                          placeholder="https://image1.jpg&#10;https://image2.jpg&#10;https://image3.jpg" 
+                          placeholder="https://image1.jpg\nhttps://image2.jpg\nhttps://image3.jpg" 
                           defaultValue={editingProduct?.images ? JSON.parse(editingProduct.images).join('\n') : ''} 
                           rows="4"
                         />
@@ -579,7 +585,7 @@ const AdminPanel = () => {
                         <label>Özellikler (Her satıra bir özellik)</label>
                         <textarea 
                           name="features" 
-                          placeholder="Su geçirmez&#10;12V enerji&#10;Hafif tasarım" 
+                          placeholder="Su geçirmez\n12V enerji\nHafif tasarım" 
                           defaultValue={editingProduct?.features ? JSON.parse(editingProduct.features).join('\n') : ''} 
                           rows="5"
                         />
@@ -781,7 +787,7 @@ const AdminPanel = () => {
                               <p>{order.phoneNumber}</p>
                             </div>
                             <div>
-                              <strong>📧 Email:</strong>
+                              <strong>✉️ Email:</strong>
                               <p>{order.user?.email}</p>
                             </div>
                           </div>
@@ -859,6 +865,15 @@ const AdminPanel = () => {
                   ))
                 )}
               </div>
+            </div>
+          )}
+
+          {activeTab === 'offers' && (
+            <div className="offers-section">
+              <div className="section-header">
+                <h3>Teklifler</h3>
+              </div>
+              <p>Bu alanda teklifler ile ilgili işlemler gelecektir.</p>
             </div>
           )}
         </main>
